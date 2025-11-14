@@ -24,6 +24,10 @@ class APKParser:
             with open(repo_file, 'r', encoding='utf-8', errors='ignore') as f:
                 content = f.read()
             
+            # В тестовом режиме преобразуем имена пакетов к верхнему регистру
+            if self.repository_manager.test_repo_mode:
+                package_name = package_name.upper()
+            
             # Ищем секцию пакета
             package_section = self._find_package_section(content, package_name)
             if not package_section:
@@ -31,6 +35,11 @@ class APKParser:
             
             # Извлекаем зависимости
             dependencies = self._extract_dependencies(package_section)
+            
+            # В тестовом режиме преобразуем зависимости к верхнему регистру
+            if self.repository_manager.test_repo_mode:
+                dependencies = [dep.upper() for dep in dependencies]
+            
             return dependencies
             
         except (UnicodeDecodeError, IOError) as e:
@@ -48,7 +57,7 @@ class APKParser:
             str: Секция пакета или None если не найдена
         """
         # Паттерн для поиска секции пакета в формате APKINDEX
-        pattern = rf'P:{package_name}\n(.*?)(?=\nP:|\n\n|\Z)'
+        pattern = rf'P:{re.escape(package_name)}\n(.*?)(?=\nP:|\n\n|\Z)'
         match = re.search(pattern, content, re.DOTALL)
         
         return match.group(0) if match else None

@@ -1,0 +1,225 @@
+C:Q1W8Koz73l7kzWqbvP8S8n4a8j5s=
+P:alpine-baselayout
+V:3.4.3-r1
+A:x86_64
+S:13543
+I:40960
+T:Alpine base dir structure and init scripts
+U:https://git.alpinelinux.org/aports/tree/main/alpine-baselayout
+L:GPL-2.0-only
+o:alpine-baselayout
+m:Natanael Copa <ncopa@alpinelinux.org>
+t:1706099644
+c:1f69dd0c8b8b5d8b5e8c8b5d8b5e8c8b5d8b5e8c
+D:so:libc.musl-x86_64.so.1
+p:alpine-baselayout-data=3.4.3-r1
+
+C:Q1W8Koz73l7kzWqbvP8S8n4a8j5s=
+P:alpine-baselayout-data
+V:3.4.3-r1
+A:x86_64
+S:1234
+I:4096
+T:Alpine base dir structure and init scripts (data files)
+U:https://git.alpinelinux.org/aports/tree/main/alpine-baselayout
+L:GPL-2.0-only
+o:alpine-baselayout
+m:Natanael Copa <ncopa@alpinelinux.org>
+t:1706099644
+c:1f69dd0c8b8b5d8b5e8c8b5d8b5e8c8b5d8b5e8c
+D:musl
+
+C:Q2X9Lpa84m8laXrcwQ9T9o5b9k6t=
+P:musl
+V:1.2.4-r1
+A:x86_64
+S:456789
+I:614400
+T:musl libc
+U:https://www.musl-libc.org/
+L:MIT
+o:musl
+m:Timo Teräs <timo.teras@iki.fi>
+t:1706099644
+c:2f79ee1d9c9c6e9c7d9f9c6e9c7d9f9c6e9c7d9f
+D:
+
+C:Q3Y0Mqb95n9mbySdxR0U0p6c0l7u=
+P:busybox
+V:1.36.1-r2
+A:x86_64
+S:567890
+I:1024000
+T:Size optimized toolbox of many common UNIX utilities
+U:https://busybox.net/
+L:GPL-2.0-only
+o:busybox
+m:Sören Tempel <soeren+alpine@soeren-tempel.net>
+t:1706099644
+c:3g8aff2ead0d7fae8g0h2ead0d7fae8g0h2ead
+D:musl so:libc.musl-x86_64.so.1
+
+C:Q4Z1Nrc06o0nczTeyS1V1q7d1m8v=
+P:base64
+V:1.0.0-r0
+A:x86_64
+S:12345
+I:20480
+T:Base64 encoding/decoding utility
+U:https://example.com/base64
+L:MIT
+o:base64
+m:Developer <dev@example.com>
+t:1706099644
+c:4h9bgg3fbe1e8gbh1i3fbe1e8gbh1i3fbe
+D:musl busybox
+
+C:Q5A2Osd17p1odaUfzT2W2r8e2n9w=
+P:nginx
+V:1.24.0-r0
+A:x86_64
+S:987654
+I:2048000
+T:HTTP and reverse proxy server
+U:https://nginx.org/
+L:BSD-2-Clause
+o:nginx
+m:NGINX Team <team@nginx.com>
+t:1706099644
+c:5i0chh4gcff2f9hc2j4gcff2f9hc2j4gcff
+D:musl libcrypto3 libssl3 pcre2 zlib
+
+C:Q6B3Pte28q2pebVg0U3X3s9f3o0x=
+P:libcrypto3
+V:3.1.2-r0
+A:x86_64
+S:345678
+I:409600
+T:Crypto library from openssl
+U:https://www.openssl.org/
+L:Apache-2.0
+o:openssl
+m:OpenSSL Team <team@openssl.org>
+t:1706099644
+c:6j1dii5hdgg3g0id3k5hdgg3g0id3k5hdgg
+D:musl
+
+C:Q7C4Quf39r3qfcWh1V4Y4t0g4p1y=
+P:libssl3
+V:3.1.2-r0
+A:x86_64
+S:234567
+I:307200
+T:SSL library from openssl
+U:https://www.openssl.org/
+L:Apache-2.0
+o:openssl
+m:OpenSSL Team <team@openssl.org>
+t:1706099644
+c:7k2ejj6iehh4h1je4l6iehh4h1je4l6iehh
+D:musl libcrypto3
+
+C:Q8D5Rvg40s4rgdXi2W5Z5u1h5q2z=
+P:pcre2
+V:10.42-r0
+A:x86_64
+S:456789
+I:409600
+T:Perl Compatible Regular Expressions library
+U:https://www.pcre.org/
+L:BSD-3-Clause
+o:pcre2
+m:PCRE2 Team <team@pcre.org>
+t:1706099644
+c:8l3fkk7jfii5i2kf5m7jfii5i2kf5m7jfii
+D:musl
+
+C:Q9E6Swh51t5sheYj3X6A6v2i6r3a=
+P:zlib
+V:1.2.13-r1
+A:x86_64
+S:123456
+I:204800
+T:Compression library
+U:https://www.zlib.net/
+L:Zlib
+o:zlib
+m:Zlib Team <team@zlib.net>
+t:1706099644
+c:9m4gll8kgjj6j3lg6n8kgjj6j3lg6n8kgjj
+D:musl
+
+C:Q0F7Txi62u6tifZk4Y7B7w3j7s4b=
+P:postgresql
+V:15.3-r0
+A:x86_64
+S:1234567
+I:3072000
+T:PostgreSQL database management system
+U:https://www.postgresql.org/
+L:PostgreSQL
+o:postgresql
+m:PostgreSQL Team <team@postgresql.org>
+t:1706099644
+c:0n5hmm9lhkk7k4mh7o9lhkk7k4mh7o9lhkk
+D:musl libcrypto3 libssl3 zlib
+
+C:Q1G8Uyj73v7ujg0l5Z8C8x4k8t5c=
+P:python3
+V:3.11.3-r0
+A:x86_64
+S:2345678
+I:4096000
+T:Python programming language
+U:https://www.python.org/
+L:Python-2.0
+o:python
+m:Python Team <team@python.org>
+t:1706099644
+c:1o6inn0mill8l5ni8p0mill8l5ni8p0mill
+D:musl libcrypto3 libssl3 zlib
+
+C:Q2H9Vzk84w8vkh1m6A9D9y5l9u6d=
+P:nodejs
+V:18.16.0-r0
+A:x86_64
+S:3456789
+I:5120000
+T:JavaScript runtime built on Chrome's V8 engine
+U:https://nodejs.org/
+L:MIT
+o:nodejs
+m:Node.js Team <team@nodejs.org>
+t:1706099644
+c:2p7joo1pjmm9m6oj9q1pjmm9m6oj9q1pjmm
+D:musl libcrypto3 libssl3 zlib
+
+C:Q3I0Wal95x9wli2n7B0E0z6m0v7e=
+P:docker
+V:24.0.2-r0
+A:x86_64
+S:4567890
+I:6144000
+T:Docker container platform
+U:https://www.docker.com/
+L:Apache-2.0
+o:docker
+m:Docker Team <team@docker.com>
+t:1706099644
+c:3q8kpp2qknn0n7pk0r2qknn0n7pk0r2qknn
+D:musl iptables libcrypto3 libssl3
+
+C:Q4J1Xbm06y0xmj3o8C1F1a7n1w8f=
+P:iptables
+V:1.8.9-r0
+A:x86_64
+S:234567
+I:307200
+T:Linux kernel packet control tool
+U:https://www.netfilter.org/
+L:GPL-2.0-only
+o:iptables
+m:Netfilter Team <team@netfilter.org>
+t:1706099644
+c:4r9lqq3rloo1o8ql1s3rloo1o8ql1s3rloo
+D:musl libcrypto3

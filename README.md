@@ -143,8 +143,3 @@ python app/main.py -p package_a -r content/test_repo_complex.txt -o test2.png -t
     └── musl
     └── so:libc.musl-x86_64.so.1
 ```
-
-## 📄 Лицензия
-
-Проект распространяется под лицензией, указанной в файле LICENSE.
-```

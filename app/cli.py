@@ -47,6 +47,13 @@ def setup_arg_parser():
         help='Режим вывода зависимостей в формате ASCII-дерева'
     )
     
+    parser.add_argument(
+        '--reverse',
+        '-R',
+        action='store_true',
+        help='Режим вывода обратных зависимостей (пакетов, которые зависят от данного)'
+    )
+    
     return parser
 
 def validate_arguments(args):

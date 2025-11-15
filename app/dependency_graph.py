@@ -94,6 +94,82 @@ class DependencyGraph:
         
         return transitive_deps
     
+    def get_reverse_dependencies(self, target_package):
+        """
+        Поиск обратных зависимостей - пакетов, которые зависят от целевого пакета
+        
+        Args:
+            target_package (str): Целевой пакет
+            
+        Returns:
+            list: Список пакетов, которые зависят от целевого пакета
+        """
+        reverse_deps = []
+        
+        # Проходим по всем пакетам в графе и ищем те, которые зависят от target_package
+        for package, dependencies in self.graph.items():
+            if target_package in dependencies:
+                reverse_deps.append(package)
+        
+        return reverse_deps
+    
+    def get_transitive_reverse_dependencies(self, target_package):
+        """
+        Поиск транзитивных обратных зависимостей с использованием DFS без рекурсии
+        
+        Args:
+            target_package (str): Целевой пакет
+            
+        Returns:
+            set: Множество всех пакетов, которые прямо или косвенно зависят от целевого пакета
+        """
+        if target_package not in self.graph:
+            return set()
+        
+        transitive_reverse_deps = set()
+        stack = [target_package]
+        
+        while stack:
+            current_package = stack.pop()
+            
+            # Находим все пакеты, которые зависят от current_package
+            for package, dependencies in self.graph.items():
+                if current_package in dependencies and package not in transitive_reverse_deps:
+                    transitive_reverse_deps.add(package)
+                    stack.append(package)
+        
+        return transitive_reverse_deps
+    
+    def print_reverse_dependencies(self, target_package):
+        """
+        Вывод обратных зависимостей в консоль
+        
+        Args:
+            target_package (str): Целевой пакет
+        """
+        direct_reverse = self.get_reverse_dependencies(target_package)
+        transitive_reverse = self.get_transitive_reverse_dependencies(target_package)
+        
+        print(f"\nОбратные зависимости пакета '{target_package}':")
+        
+        print(f"\nПрямые обратные зависимости (пакеты, которые напрямую зависят от '{target_package}'):")
+        if direct_reverse:
+            for i, dep in enumerate(direct_reverse, 1):
+                print(f"  {i}. {dep}")
+        else:
+            print("  Не найдено пакетов, которые напрямую зависят от данного")
+        
+        print(f"\nТранзитивные обратные зависимости (все пакеты, которые прямо или косвенно зависят от '{target_package}'):")
+        if transitive_reverse:
+            for i, dep in enumerate(transitive_reverse, 1):
+                print(f"  {i}. {dep}")
+        else:
+            print("  Не найдено пакетов, которые транзитивно зависят от данного")
+        
+        print(f"\nСтатистика:")
+        print(f"  Прямые обратные зависимости: {len(direct_reverse)}")
+        print(f"  Транзитивные обратные зависимости: {len(transitive_reverse)}")
+    
     def print_dependency_tree(self, root_package):
         """
         Вывод дерева зависимостей в ASCII-формате

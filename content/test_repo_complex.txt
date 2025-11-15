@@ -1,0 +1,23 @@
+P:A
+D:B C
+
+P:B
+D:D E
+
+P:C
+D:D F
+
+P:D
+D:G
+
+P:E
+D:G H
+
+P:F
+D:H
+
+P:G
+D:
+
+P:H
+D:
